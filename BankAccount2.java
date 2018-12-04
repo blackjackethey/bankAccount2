@@ -1,59 +1,54 @@
-/*
- * How do i make it so that it returns the customers balance and if they withdraw
- * it takes out an amount from their balance and when they deposit it adds to their current balance
- * 
- * I used Scanner but it only enters numbers doesn't really do anything
- */
-
-import java.util.*;
 
 public class BankAccount2 
 {
 	private String name;
 	private double balance;
-	Scanner input = new Scanner(System.in);
 	
 	public BankAccount2()
 	{
 		name = "";
 		balance = 0.0;
 	}
-	public void setName()
+	public void setName(String nm)
 	{
-		System.out.println("Im Pablo, enter your name:");
-		String nm = input.next();
 		name = nm;
 	}
 	public String getName()
 	{
+		System.out.println("Im Pablo, enter your name:");
 		return name;
 	}
 	public void setBalance(double n)
 	{
-		balance = n;
+		balance += n;
 	}
 	public double getBalance()
 	{
 		return balance;
 	}
-	public void setDeposit()
+	public void setDeposit(double amount)
 	{
 		System.out.println("Enter an amount: ");
-		double deposit = input.nextDouble();
-		balance += deposit;
+		balance += amount;
 	}
 	public double getDeposit()
 	{
+		System.out.println("Enter an amount: ");
 		return balance;
 	}
-	public void withDraw()
+	public void setwithDraw(double amount2)
+	{
+		balance -= amount2;
+	}
+	public double getwithDraw()
 	{
 		System.out.println("Enter an amount: ");
-		double withDraw = input.nextDouble();
-		balance += withDraw;
+		return balance;
 	}
 	public String toString()
 	{
-		return "";
+		String str;
+		str = "Name: " + name + "\n" + "Enter balance amount: $" + balance + "\n";
+		return str;
 	}
 }
